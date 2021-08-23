@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+
+const GIFS = [
+  "https://media1.giphy.com/media/U2nN0ridM4lXy/giphy.webp?cid=ecf05e477fub09n0kg0v2rr014kfz9afhi8395jeh291bslu&rid=giphy.webp&ct=g",
+  "https://media1.giphy.com/media/HZpCCbcWc0a3u/200w.webp?cid=ecf05e477fub09n0kg0v2rr014kfz9afhi8395jeh291bslu&rid=200w.webp&ct=g",
+];
+
+const GIFS_DIFF = [
+  "https://media3.giphy.com/media/m6aZERsqxPiBa/200.webp?cid=ecf05e477fub09n0kg0v2rr014kfz9afhi8395jeh291bslu&rid=200.webp&ct=g",
+];
 
 function App() {
+  const [gifs, setGifts] = useState(GIFS);
+
+  useEffect(function () {
+    console.log("efecto ejecutado");
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-content">
+        {gifs.map((singleGif) => (
+          <img src={singleGif} />
+        ))}
+        <button onClick={() => setGifts(GIFS_DIFF)}>Cambiar Gifts</button>
+      </section>
     </div>
   );
 }
