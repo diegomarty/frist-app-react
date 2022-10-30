@@ -1,15 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 import ListOfGifs from "./components/ListOfGifs";
 
-function App() {
+
+
+export default function App() {
+  const [keyword, setKeyword] = useState('digimon')
+
   return (
     <div className="App">
       <section className="App-content">
-        <ListOfGifs keyword='github' />
+        <button onClick={() => setKeyword('pokemon')}> cambiar estado</button>
+        <ListOfGifs keyword={keyword} />
       </section>
     </div>
   );
 }
 
-export default App;
