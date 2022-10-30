@@ -14,8 +14,8 @@ function App() {
   const [gifs, setGifts] = useState(GIFS);
 
   useEffect(function () {
-    console.log("efecto ejecutado");
-  });
+    setGifts(GIFS_DIFF)
+  }, []);
 
   return (
     <div className="App">
