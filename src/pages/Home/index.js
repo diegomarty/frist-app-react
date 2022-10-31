@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import getGifs from "../../services/getGifs";
 import ListOfGifs from "../../components/ListOfGifts";
 import { useGifs } from "../../hooks/useGifs";
 
@@ -24,7 +23,6 @@ export default function Home() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault(); // previene de utilizar el comportamiento por defecto del navegador
-    console.log(keyword);
     pushLocation(`/search/${keyword}`);
   };
 
