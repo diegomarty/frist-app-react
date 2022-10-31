@@ -1,0 +1,32 @@
+.Gif {
+
+    display: inline-flex;
+    color: #eee;
+    flex-direction: column;
+    text-decoration: none;
+    margin: 8px;
+    width: auto;
+    
+}
+
+.Gif img {
+    margin: 0 auto;
+    object-fit: contain;
+    max-width: 150px;
+}
+
+.Gif h4 {
+    margin: 0;
+}
+
+i {
+    font-size: 80px;
+}
+
+.GifTitle {
+    border: 1px solid #eee; 
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-weight: 600;
+}
