@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import ListOfGifs from "../../components/ListOfGifts";
 import { useGifs } from "../../hooks/useGifs";
+import Category from "../../components/Category";
+import TrendingSearches from "../../components/TrendingSearches";
 
 const POPULAR_GIFS = [
   "Pokemon",
@@ -33,23 +35,18 @@ export default function Home() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          type="text"
-          value={keyword}
-          placeholder="search ..."
-        />
+        <button>Buscar</button>
+        <input placeholder="Search a gif here..." onChange={handleChange} type='text' value={keyword} />
       </form>
-      <h3 className="App-title">Los gifs mas polulares</h3>
-      <ul>
-        {POPULAR_GIFS.map((popularGif) => (
-          <li key={popularGif}>
-            <Link to={`/search/${popularGif}`}>Gifs de {popularGif}</Link>
-          </li>
-        ))}
-      </ul>
-      <h3 className="App-title">Última busqueda</h3>
-      <ListOfGifs gifs={gifs} />
+      <div className="App-main">
+        <div className="App-results">
+          <h3 className="App-title">Última búsqueda</h3>
+          <ListOfGifs gifs={gifs} />
+        </div>
+        <div className="App-category">
+          <TrendingSearches/>
+        </div>
+      </div>
     </>
   );
 }
